@@ -1,2 +1,2 @@
-# css-cdn-intellisense
-A VS code plugin to provide class names suggestions for network hosted CSS fields
+# CDN CSS IntelliSense
+A VS code plugin to provide class names suggestions for network hosted CSS files

@@ -1,0 +1,114 @@
+{
+    "name": "cdn-css-intellisense",
+    "displayName": "CDN CSS IntelliSense",
+    "description": "A VS code plugin to provide class names suggestions for network hosted CSS files",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.58.0"
+    },
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "npm run clean-workspace && tsc",
+        "watch": "tsc -w",
+        "package": "vsce package",
+        "clean-workspace": "rimraf ./out"
+    },
+    "dependencies": {
+        "css": "^3.0.0",
+        "culori": "^4.0.1"
+    },
+    "devDependencies": {
+        "@types/css": "^0.0.37",
+        "@types/culori": "^2.1.0",
+        "@types/node": "^20.11.16",
+        "@types/vscode": "^1.58.0",
+        "@vscode/vsce": "^2.22.0",
+        "rimraf": "^5.0.5",
+        "typescript": "^5.3.3"
+    },
+    "activationEvents": [
+        "onLanguage:javascriptreact",
+        "onLanguage:typescriptreact",
+        "onLanguage:javascript",
+        "onLanguage:typescript"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "javascriptreact",
+                "aliases": [
+                    "JavaScript React"
+                ],
+                "extensions": [
+                    ".jsx"
+                ],
+                "documentSelector": [
+                    {
+                        "scheme": "file",
+                        "language": "javascriptreact"
+                    }
+                ]
+            },
+            {
+                "id": "typescriptreact",
+                "aliases": [
+                    "TypeScript React"
+                ],
+                "extensions": [
+                    ".tsx"
+                ],
+                "documentSelector": [
+                    {
+                        "scheme": "file",
+                        "language": "typescriptreact"
+                    }
+                ]
+            },
+            {
+                "id": "javascript",
+                "aliases": [
+                    "JavaScript"
+                ],
+                "extensions": [
+                    ".js"
+                ],
+                "documentSelector": [
+                    {
+                        "scheme": "file",
+                        "language": "javascript"
+                    }
+                ]
+            },
+            {
+                "id": "typescript",
+                "aliases": [
+                    "TypeScript"
+                ],
+                "extensions": [
+                    ".ts"
+                ],
+                "documentSelector": [
+                    {
+                        "scheme": "file",
+                        "language": "typescript"
+                    }
+                ]
+            }
+        ]
+    },
+    "configuration": {
+        "title": "CDN CSS IntelliSense Configuration",
+        "properties": {
+            "cdnCssIntellisense.urls": {
+                "type": "array",
+                "default": [],
+                "description": "Comma separated list of the urls/cdn links whose css needs to be loaded for intellisense suggestions"
+            }
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ayushSur/css-cdn-intellisense"
+    }
+}
